@@ -1,0 +1,19 @@
+#notes-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+	margin-right: 16px;
+	margin-left: 16px;
+}
+
+@media (min-width: 300px) {
+	#notes-container {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	}
+	
+}
+
+.note {
+	background-color: yellow;
+	padding:16px;
+}
