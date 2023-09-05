@@ -13,7 +13,25 @@
 	
 }
 
-.note {
-	background-color: yellow;
-	padding:16px;
+/* .note {
+	padding:8px;
+	background-color: #f5e76e;
+	border-radius: 4px;
 }
+
+.note-header {
+	background-color: springgreen;
+	padding: 4px 4px;
+}
+
+.note-content {
+	background-color: antiquewhite;
+	min-height: 125px;
+	padding: 8px 4px;
+}
+
+.note-footer {
+	background-color: aqua;
+	padding: 8px 4px;
+	text-align: end;
+} */
