@@ -2,14 +2,36 @@ const noteTemplate = document.createElement('template');
 
 noteTemplate.innerHTML = `
 <style>
+	input {
+		background: transparent;
+		border: none;
+	}
+
+	input:focus {
+		border:none;
+		outline: none
+	}
+
 	.note {
 		padding:8px;
 		background-color: #f5e76e;
 		border-radius: 4px;
 	}
+
+	.note:hover {
+		outline: 4px solid #dbcf65;
+	}
+	.note:hover > .note-footer > .note-footer-content {
+		display: inline;
+	}
 	
 	.note-header {
 		padding: 4px 4px;
+	}
+
+	.note-title {
+		font-size: 18px;
+		font-weight: 600
 	}
 	
 	.note-content {
@@ -20,17 +42,22 @@ noteTemplate.innerHTML = `
 	.note-footer {
 		padding: 8px 4px;
 		text-align: end;
+		height: 16px;
+	}
+
+	.note-footer-content {
+		display: none;
 	}
 </style>
 <div class="note">
 	<header class="note-header">
-		<h3>title</h3>
+		<input type="text" class="note-title" placeholder="Title">
 	</header>
 	<section class="note-content">
 		content of note 1
 	</section>
 	<footer class="note-footer">
-		metadata (created at, edited at)
+		<span class="note-footer-content"> metadata (created at, edited at) </span>
 	</footer>
 </div>
 `
@@ -84,7 +111,7 @@ class Note extends HTMLElement {
 	}
 
 	updateTitle(newTitle) {
-		this.shadowRoot.querySelector('h3').innerText = newTitle;
+		this.shadowRoot.querySelector(".note-title").value = newTitle;
 	}
 
 	updateContent(newContent) {

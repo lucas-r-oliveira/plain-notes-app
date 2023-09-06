@@ -10,8 +10,15 @@
 	#notes-container {
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	}
-	
 }
+
+#new-note {
+	position: fixed;
+	bottom: 32px;
+	right:32px;
+
+}
+
 
 /* .note {
 	padding:8px;
